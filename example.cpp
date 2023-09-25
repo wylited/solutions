@@ -1,21 +1,23 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <string>
+#include <vector>
+
+using namespace std;
 
 const std::string prefix = "example";
 
 int main() {
-    std::ifstream in(prefix + "-in.txt");
-    std::ofstream out(prefix + "-out.txt");
+  std::ifstream fin(prefix + "-in.txt");
+  std::ofstream fout(prefix + "-out.txt");
 
-    std::string line;
-    while (in >> line) {
-        out << line << std::endl;
-        std::cout << line << std::endl;
-    }
+  std::string line;
+  while (fin >> line) {
+    fout << line << std::endl;
+  }
 
-    in.close();
-    out.close();
+  fin.close();
+  fout.close();
 
-    return 0;
+  return 0;
 }
