@@ -8,8 +8,8 @@ using namespace std;
 const std::string prefix = "example";
 
 int main() {
-  std::ifstream fin(prefix + "-in.txt");
-  std::ofstream fout(prefix + "-out.txt");
+  std::ifstream fin("in/" + prefix + ".txt");
+  std::ofstream fout("out/" + prefix + ".txt");
 
   std::string line;
   while (fin >> line) {

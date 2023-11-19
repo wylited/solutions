@@ -3,11 +3,11 @@
 #include <string>
 #include <climits>
 
-const std::string prefix = "AOC1-15";
+const std::string prefix = "1";
 
 int main() {
-    std::ifstream in(prefix + "-in.txt");
-    std::ofstream out(prefix + "-out.txt");
+    std::ifstream in("in/" + prefix + ".txt");
+    std::ofstream out("out/" + prefix + ".txt");
 
     std::string line;
     int floor = 0;

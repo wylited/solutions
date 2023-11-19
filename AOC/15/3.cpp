@@ -4,7 +4,7 @@
 #include <tuple>
 #include <vector>
 
-const std::string prefix = "AOC3-15";
+const std::string prefix = "3";
 
 void push_if_not_in(std::vector<std::tuple<int, int>> &vec,
                     const std::tuple<int, int> &t) {
@@ -42,8 +42,8 @@ void move(const char c, int &x, int &y,
 }
 
 int main() {
-  std::ifstream fin(prefix + "-in.txt");
-  std::ofstream fout(prefix + "-out.txt");
+  std::ifstream fin("in/" + prefix + ".txt");
+  std::ofstream fout("out/" + prefix + ".txt");
 
   std::string line;
   std::vector<std::tuple<int, int>> santavisited;
