@@ -14,11 +14,11 @@ Personal repository filled with solutions to banks of coding problems.
 5. Run the program with `./test <prefix>` and compare the output
 6. Do it again for another problem
 
-## Goals
+## TODO
 - [ ] AOC 2015-2023
 - [ ] HKOI
 - [ ] CEMC/CCO?
-- [ ] Leetcode
+- [ ] CodeForces
 - [ ] CodingQuest
-- [ ] ESF CoCo hackathon 2023
+- [ ] ESF CoCo Hackathon 2023 (coming soon hopefully)
 
