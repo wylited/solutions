@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const string prefix = "1A";
+const string prefix = "1";
 
 int main() {
   ifstream fin("in_" + prefix + ".txt");
