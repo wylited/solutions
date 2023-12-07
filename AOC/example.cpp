@@ -2,13 +2,13 @@
 
 using namespace std;
 
-const std::string prefix = "example";
+const string prefix = "example";
 
 int main() {
-  std::ifstream fin("in/" + prefix + ".txt");
-  std::ofstream fout("out/" + prefix + ".txt");
+  ifstream fin("in_" + prefix + ".txt");
+  ofstream fout("out_" + prefix + ".txt");
 
-  std::string line;
+  string line;
   while (fin >> line) {
     fout << line << std::endl;
   }
