@@ -2,16 +2,9 @@
 
 using namespace std;
 
-int t;
-
-void solve() {
-
-}
-
 int main() {
-  cin >> t;
-  while(t--){
-    solve();
-  }
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
   return 0;
 }
