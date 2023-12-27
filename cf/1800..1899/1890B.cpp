@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 
-bool isgood(std::string s) {
-  char prev = s[0];
+using namespace std;
+
+bool isgood(string s) {
   for (int i = 1; i < s.length(); ++i) {
     if(s[i-1] == s[i]) {
       return false;
@@ -10,27 +11,35 @@ bool isgood(std::string s) {
   return true;
 }
 
-int main() {
-  std::ios::sync_with_stdio(false);
-  std::cin.tie(0);
+int T, m, n;
+string s, t, x;
 
-  int T, m, n;
-  std::string s, t;
-  std::cin >> T;
+int main(){
+   cin >> T;
 
   while(T--) {
-    std::cin >> n >> m >> s >> t;
-    int slength = s.length();
-    std::string output = "No";
+     cin >> n >> m >> s >> t;
+     x = "";
+
+     if(t[0] == t[m-1]){
+       x += t[0];
+       x += t[m-1];
+     }
+
+     if(isgood(s)){
+       cout << "YES\n";
+     } else if(s.find(x) == string::npos && isgood(t)){
+       cout << "YES\n";
+     } else {
+       cout << "NO\n";
+     }
 
     for(int i = 0; i < s.length(); ++i) {
-      std::string temp = s;
+       string temp = s;
       if(isgood(temp.insert(i, t))) {
-        output = "Yes";
         break;
       }
     }
-    std::cout << output << std::endl;
   }
   return 0;
 }
