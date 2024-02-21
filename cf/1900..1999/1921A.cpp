@@ -9,7 +9,7 @@ void solve() {
   cin >> x[0] >> y[0] >> x[1] >> y[1] >> x[2] >> y[2] >> x[3] >> y[3];
   sort(x.begin(), x.end());
   sort(y.begin(), y.end());
-  cout << x[0] - x[3] * x[0] - x[3] << endl;
+  cout << fixed << setprecision(0) << pow(x[0] - x[3], 2) << endl;
 }
 
 int main() {
