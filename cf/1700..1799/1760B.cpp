@@ -2,16 +2,10 @@
 
 using namespace std;
 
-int t, ans, n;
-string s;
+int t;
 
 void solve() {
-  ans = 0;
-  cin >> n >> s;
-  for(char c : s){
-    ans = max(ans, (c - 'a'));
-  }
-  cout << ans + 1 << endl;
+
 }
 
 int main() {
