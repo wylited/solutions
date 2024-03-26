@@ -1,41 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-
-#define ifor(n) for (int i = 0; i < n; i++)
-#define all(v) v.begin(), v.end()
-#define rall(v) v.rbegin(), v.rend()
-#define pb push_back
-#define sz(a) (int)a.size()
-
-int n, k, t;
-
 int main() {
+  int n, k, t;
+  vector<int> a;
   cin >> n >> k;
-  vector<int> a(n, 0);
-  cin >> a[0];
-
-  ifor(n - 1) {
+  a.push_back(0);
+  for (int i = 0; i < n; i++) {
     cin >> t;
-    a[i + 1] = a[i] + t;
+    a.push_back(a[i] + t);
   }
 
-  int m = INT_MAX;
-  int id = -1;
-
-  for (int i = k; i < n; i++) {
-    if (m > a[i] - a[i - k]) {
-      m = a[i] - a[i - k];
-      id = i;
-    }
-  }
-
-  ifor(n - k) {
-    if (m > a[i + k] - a[i]) {
+  int m, r;
+  m = 100000000;
+  for (int i = 0; i <= n - k; i++) {
+    if (a[i + k] - a[i] < m) {
       m = a[i + k] - a[i];
-      id = i;
+      r = i;
     }
   }
-  cout << id + 1;
+  cout << r + 1;
 }
