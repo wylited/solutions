@@ -2,38 +2,31 @@
 
 using namespace std;
 
-pair<int, int> minmax(const deque<int> d) {
-  int minV, maxV = d.front();
-  for (auto v : d) {
-    if (v < minV)
-      minV = v;
-    if (v > maxV)
-      maxV = v;
-  }
-  return make_pair(minV, maxV);
-}
-
 void solve() {
-  int n, c;
+  int n;
   cin >> n;
 
-  deque<int> a;
+  vector<int> a(n);
   for (int i = 0; i < n; i++) {
-    cin >> c;
-    a.push_back(c);
+    cin >> a[i];
   }
 
-  int l(1), r(n);
-  while (a.front() != a.back()) {
-    auto [small, large] = minmax(a);
-    if (a.front() == small || a.front() == large) {
-      a.pop_front();
+  int l(0), r(n - 1), s(1), b(n);
+  while (s <= b) {
+    if (a[l] == s) {
       l++;
-    } else if (a.back() == small || a.back() == large) {
-      a.pop_back();
+      s++;
+    } else if (a[l] == b) {
+      l++;
+      b--;
+    } else if (a[r] == s) {
       r--;
+      s++;
+    } else if (a[r] == b) {
+      r--;
+      b--;
     } else {
-      cout << l << " " << r << endl;
+      cout << l + 1 << " " << r + 1 << endl;
       return;
     }
   }
