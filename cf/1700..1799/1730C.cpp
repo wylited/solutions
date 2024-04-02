@@ -5,20 +5,18 @@ using namespace std;
 
 void solve() {
   string s, smn, ans;
+  char c;
   cin >> s;
-  long n = s.length();
-  for (int i = n - 1; i >= 0; --i) {
+  for (auto i = s.rbegin(); i != s.rend(); i++) {
+    c = *i;
     if (smn == "") {
-      smn += s[i];
-      ans += s[i];
-      continue;
-    }
-    if (smn.back() >= s[i]) {
-      smn += s[i];
-      ans += s[i];
-    } else {
-      ans += s[i] == '9' ? '9' : s[i] + 1;
-    }
+      smn += c;
+      ans += c;
+    } else if (smn.back() >= c) {
+      smn += c;
+      ans += c;
+    } else
+      ans += c == '9' ? '9' : c + 1;
   }
   sort(ans.begin(), ans.end());
   cout << ans << endl;
