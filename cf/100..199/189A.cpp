@@ -8,12 +8,8 @@ int main() {
   cin >> a >> b >> c;
   for (int x = 0; x <= n; x++) {
     for (int y = 0; y <= n; y++) {
-      int zc = (n - a * x + b * y);
-      if (zc % c == 0) {
-        if (zc + a * x + b * y == n) {
-          m = max(m, ((n - a * x + b * y) / c) + x + y);
-        }
-      }
+      if ((n - a * x - b * y) % c == 0 && (a * x + b * y) <= n)
+        m = max(m, x + y + ((n - a * x - b * y) / c));
     }
   }
   cout << m;
