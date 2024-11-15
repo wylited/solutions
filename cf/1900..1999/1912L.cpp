@@ -6,20 +6,21 @@ int t, n;
 string s;
 bool l, o;
 
-int count(string s, char c){
+int count(string s, char c) {
   int cnt = 0;
-  for(int i = 0; i < s.size(); i++){
-    if(s[i] == c) cnt++;
+  for (int i = 0; i < s.size(); i++) {
+    if (s[i] == c)
+      cnt++;
   }
   return cnt;
 }
 
-void solve() {
+void solve() { // ->
   cin >> n >> s;
-  for(int i = 1; i < n; i++){
+  for (int i = 1; i < n; i++) {
     l = !(count(s.substr(0, i), 'L') == count(s.substr(i, n), 'L'));
     o = !(count(s.substr(0, i), 'O') == count(s.substr(i, n), 'O'));
-    if(l && o){
+    if (l && o) {
       cout << i << endl;
       return;
     }
@@ -31,4 +32,3 @@ int main() {
   solve();
   return 0;
 }
-
